@@ -1,0 +1,36 @@
+.empire {
+  background-image: url('/assets/img/bg_empire.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.box-empire {
+  color: #fff;
+  width: 80%;
+  margin: 5% auto;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+}
+
+.box-empire .kingdom {
+  color: #fff;
+}
+
+.box-empire .kingdom a {
+  color: #fff;
+  display: block;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  text-decoration: none;
+}
+
+.box-empire .kingdom a:hover {
+  color: #000;
+  display: block;
+  background: #fff;
+}

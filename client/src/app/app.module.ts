@@ -10,9 +10,12 @@ import { LogoutComponent } from '../components/logout/logout.component';
 import { RegisterComponent } from '../components/register/register.component';
 
 import { AuthService } from '../services/auth/auth.service';
+import { KingdomService } from '../services/kingdom/kingdom.service';
 import { TokenInterceptorService } from '../services/token-interceptor/token-interceptor.service';
 
 import { AuthGuard } from '../guard/auth.guard';
+import { EmpireComponent } from '../components/empire/empire.component';
+import { KingdomDetailComponent } from '../components/kingdom-detail/kingdom-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { AuthGuard } from '../guard/auth.guard';
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
+    EmpireComponent,
+    KingdomDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { AuthGuard } from '../guard/auth.guard';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard, AuthService, {
+  providers: [AuthGuard, AuthService, KingdomService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

@@ -1,4 +1,15 @@
 const User                  = require('./User');
+const KingDom               = require('./KingDom');
+
+User.hasMany(KingDom, {
+    as: 'kingdoms',
+    foreignKey: 'userId'
+})
+
+KingDom.belongsTo(User, {
+    as: 'user',
+    foreignKey: 'userId'
+})
 
 /**
 const Pet                   = require('./Pet');

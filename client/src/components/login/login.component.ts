@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.loggedIn()) {
-      this.router.navigate(['choice-pet']);
+      this.router.navigate(['empire']);
     }
   }
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/choice-pet']);
+          this.router.navigate(['/empire']);
         },
         err => console.error(err)
       );

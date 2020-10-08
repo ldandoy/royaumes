@@ -1,20 +1,25 @@
-<div class="page">
-  <div class="container" layout="column" layout-align="center">
-    <div class="">
-      <h1>Connexion</h1>
-    </div>
-    <div class="">
-      <form>
-        <input placeholder="Login" [(ngModel)]="authData.email" name="email" required>
+<div class="container-fluid login">
+  <div class="row">
+    <div class="col-12">
+      <form class="form-login">
+        <h1 class="title">Connectez-vous</h1>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input placeholder="Email" class="form-control" [(ngModel)]="authData.email" id="email" name="email" required>
+        </div>
 
-        <input type="password" placeholder="password" [(ngModel)]="authData.password" name="password" required>
-        <p align="right">
-          <button (click) = "auth()" mat-raised-button color="primary">Envoyer</button>
-        </p>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="authData.password" id="password" name="password" required>
+        </div>
+        <div class="text-right">
+          <button (click)="auth()" class="btn btn-dark">Connection</button>
+        </div>
+
+        <div class="text-center">
+          <a href="/register">Pas encore de compte ?</a>
+        </div>
       </form>
-      <div class="loginBottomText">
-        <a href="/register">Pas encore de compte ?</a>
-      </div>
     </div>
   </div>
 </div>

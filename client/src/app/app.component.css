@@ -1,0 +1,12 @@
+.bg-light {
+  background-color: rgba(0, 0, 0, 0.60) !important;
+}
+
+a.nav-link {
+  color: #fff !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-family: 'UnifrakturMaguntia', cursive;
+}

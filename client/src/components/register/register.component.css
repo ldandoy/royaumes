@@ -1,0 +1,22 @@
+.register {
+  background-image: url('/assets/img/bg_login_page.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.form-register {
+  color: #fff;
+  width: 45%;
+  margin: 5% auto;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+}
+
+.form-register a {
+  color: #fff;
+  text-decoration: none;
+}

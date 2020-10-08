@@ -1,5 +1,5 @@
-.login {
-  background-image: url('/assets/img/bg_login_page.jpg');
+.kingdom {
+  background-image: url('/assets/img/bg_empire_detail.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,16 +7,11 @@
   min-height: 100%;
 }
 
-.form-login {
+.box-kingdom {
   color: #fff;
-  width: 45%;
+  width: 80%;
   margin: 5% auto;
   padding: 40px 20px;
   background-color: rgba(0, 0, 0, 0.60);
   border-radius: 10px;
-}
-
-.form-login a {
-  color: #fff;
-  text-decoration: none;
 }
