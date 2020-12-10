@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { KingdomService} from '../../services/kingdom/kingdom.service';
-import { AuthService } from '../../services/auth/auth.service';
+import { KingdomService} from '../../../services/kingdom/kingdom.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
-import { Kingdom } from '../../models/kingdom';
+import { Kingdom } from '../../../models/kingdom';
 
 @Component({
   selector: 'app-empire',

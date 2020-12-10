@@ -1,0 +1,34 @@
+<div class="container-fluid caserne">
+  <div class="row">
+    <div class="col-12">
+      <div class="box-caserne">
+        <h1 class="title">La caserne</h1>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Nom</td>
+              <td>Nombre</td>
+              <td>Att</td>
+              <td>Def</td>
+              <td>Butin</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tr *ngFor="let unite of unites | keyvalue">
+            <td width="60%">{{unite.value.name}}</td>
+            <td class="text-center">{{unite.value.nb}}</td>
+            <td class="text-center">{{unite.value.off}}</td>
+            <td class="text-center">{{unite.value.def}}</td>
+            <td class="text-center">{{unite.value.butin}}</td>
+            <td class="text-center"><button class="addLink btn" (click)="addRecru(unite.key)">+</button> <input type="number" class="recruInput" [(ngModel)]="recru[unite.key]" /> <button class="addLink btn" (click)="delRecru(unite.key)">-</button><button class="btn btn-sm btn-warning">Recrutter</button></td>
+          </tr>
+        </table>
+
+        <div class="text-right">
+          <a routerLink="/{{kingdom.id}}/kingdom-detail" class="btn btn-dark">Retour à votre ville</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@
       <div class="box-empire">
         <h1 class="title">Votre empire</h1>
         <div class="kingdom" *ngFor="let kingdom of kingdoms">
-          <a routerLink="/kingdom-detail/{{kingdom.id}}">{{kingdom.name}}</a>
+          <a routerLink="/{{kingdom.id}}/kingdom-detail">{{kingdom.name}}</a>
         </div>
       </div>
     </div>

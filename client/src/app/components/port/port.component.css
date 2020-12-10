@@ -1,5 +1,5 @@
-.kingdom {
-  background-image: url('/assets/img/bg_empire_detail.jpg');
+.port {
+  background-image: url('/assets/img/bg_port.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,11 +7,26 @@
   min-height: 100%;
 }
 
-.box-kingdom {
+.box-port {
   color: #fff;
   width: 80%;
   margin: 5% auto;
   padding: 40px 20px;
   background-color: rgba(0, 0, 0, 0.60);
   border-radius: 10px;
+}
+
+.box-port td {
+  color: #fff;
+}
+
+.box-port td .addLink {
+  cursor: pointer;
+  color: #fff;
+}
+
+
+.box-port td .recruInput {
+  width: 20%;
+  text-align: center;
 }
