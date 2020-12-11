@@ -8,6 +8,7 @@ const morgan            = require('morgan');
 
 const authRouter        = require('./routes/auth');
 const kingdomRouter     = require('./routes/kingdom');
+const worldRouter     = require('./routes/world');
 
 require('./models/Asso');
 
@@ -29,6 +30,7 @@ server.get('/', (req, res, next) => {
 
 server.use('/', authRouter);
 server.use('/kingdoms', kingdomRouter);
+server.use('/world', worldRouter);
 
 server.use((req, res, next) => {
     res.status(404).json({

@@ -1,0 +1,13 @@
+<div class="container-fluid world">
+    <div class="row">
+      <div class="col-12">
+        <div class="box-world">
+          <h1 class="title">Le monde</h1>
+          <div class="kingdom" *ngFor="let user of users">
+            <a routerLink="/empire">{{user.username}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

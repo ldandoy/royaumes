@@ -9,16 +9,17 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 
-import { AuthService } from '../services/auth/auth.service';
-import { KingdomService } from '../services/kingdom/kingdom.service';
-import { TokenInterceptorService } from '../services/token-interceptor/token-interceptor.service';
+import { AuthService } from './services/auth/auth.service';
+import { KingdomService } from './services/kingdom/kingdom.service';
+import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
 
-import { AuthGuard } from '../guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { EmpireComponent } from './components/empire/empire.component';
 import { KingdomDetailComponent } from './components/kingdom-detail/kingdom-detail.component';
 import { CaserneComponent } from './components/caserne/caserne.component';
 import { PortComponent } from './components/port/port.component';
 import { TempleComponent } from './components/temple/temple.component';
+import { WorldComponent } from './components/world/world.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TempleComponent } from './components/temple/temple.component';
     CaserneComponent,
     PortComponent,
     TempleComponent,
+    WorldComponent,
   ],
   imports: [
     BrowserModule,
