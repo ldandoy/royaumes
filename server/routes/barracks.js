@@ -14,12 +14,10 @@ Router.get("/:kingdomId", (req, res) => {
         }
     })
     .then(async barrack => {
-        console.log(barrack)
         res.status(200).json(barrack);
     })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json({'error': err});
+    .catch(error => {
+        next(error)
     });
 });
 
