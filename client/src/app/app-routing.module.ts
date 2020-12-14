@@ -8,6 +8,8 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WorldComponent } from './components/world/world.component';
 import { EmpireComponent } from './components/empire/empire.component';
+import { EmpireShowComponent } from './components/empire-show/empire-show.component';
+import { EmpireAttaqueComponent } from './components/empire-attaque/empire-attaque.component';
 import { KingdomDetailComponent } from './components/kingdom-detail/kingdom-detail.component';
 import { CaserneComponent } from './components/caserne/caserne.component';
 import { PortComponent } from './components/port/port.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'world', component: WorldComponent, canActivate: [AuthGuard] },
   { path: 'empire', component: EmpireComponent, canActivate: [AuthGuard] },
+  { path: ':userId/empire-show', component: EmpireShowComponent, canActivate: [AuthGuard] },
+  { path: ':userId/empire-attaque', component: EmpireAttaqueComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/kingdom-detail', component: KingdomDetailComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/caserne', component: CaserneComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/port', component: PortComponent, canActivate: [AuthGuard] },

@@ -1,5 +1,7 @@
 const User                  = require('./User');
 const KingDom               = require('./KingDom');
+const Barrack               = require('./Barrack');
+const Unit                  = require('./Unit');
 
 User.hasMany(KingDom, {
     as: 'kingdoms',
@@ -11,27 +13,7 @@ KingDom.belongsTo(User, {
     foreignKey: 'userId'
 })
 
-/**
-const Pet                   = require('./Pet');
-const PetCategory           = require('./PetCategory');
-const Sector                = require('./Sector');
-const Place                 = require('./Place');
-const PlaceCategory         = require('./PlaceCategory');
-
-// FK: userId
-User.hasMany(Pet, {
-    as: 'pets',
-    foreignKey: 'userId'
+Barrack.belongsTo(Unit, {
+    as: 'unit',
+    foreignKey: 'unitId'
 })
-
-Pet.belongsTo(User, {
-    as: 'user',
-    foreignKey: 'userId'
-})
-
-User.belongsToMany(Track,{
-     through: 'user_track',
-     foreignKey: userId
-     timestamps: false
- })
- */

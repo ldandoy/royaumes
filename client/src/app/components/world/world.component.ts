@@ -13,6 +13,7 @@ import { User } from '../../models/user';
 export class WorldComponent implements OnInit {
 
   users: User[];
+  me: User;
 
   constructor(private worldService: WorldService, private authService: AuthService) { }
 
@@ -21,10 +22,11 @@ export class WorldComponent implements OnInit {
       .subscribe(
         users => {
           this.users = users;
-          console.log(this.users)
         },
         err => console.error(err)
       );
+
+    this.me = this.authService.me();
   }
 
 }

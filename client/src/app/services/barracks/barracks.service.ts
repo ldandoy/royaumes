@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Kingdom } from '../../models/kingdom';
+import { Barrack } from '../../models/barrack';
 
 @Injectable({
   providedIn: 'root'
 })
-export class KingdomService {
+export class BarracksService {
 
   private url = 'http://localhost:3000';  // URL to web api
 
@@ -16,11 +16,7 @@ export class KingdomService {
 
   constructor(private http: HttpClient) { }
 
-  list = (user) => {
-    return this.http.get<Kingdom[]>(`${this.url}/kingdoms/${user.id}`);
-  }
-
-  getById = (user, kingdomId) => {
-    return this.http.get<Kingdom>(`${this.url}/kingdoms/${user.id}/${kingdomId}`);
+  list = (kingdomId) => {
+    return this.http.get<Barrack[]>(`${this.url}/barracks/${kingdomId}`);
   }
 }

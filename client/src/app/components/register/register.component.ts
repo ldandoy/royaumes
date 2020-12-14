@@ -11,6 +11,7 @@ import { AuthService } from '../../services/auth/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerData = {
+    username: null,
     email: null,
     email2: null,
     password: null,

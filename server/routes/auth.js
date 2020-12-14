@@ -1,6 +1,8 @@
 const express = require('express');
-const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+
+const User = require('../models/User');
+const Kindom = require('../models/Kingdom');
 
 const Router = express.Router();
 
@@ -14,13 +16,25 @@ Router.post("/register", async(req, res) => {
                 level: 1
             })
             .then(async user => {
+                // Création du token d'authentification
                 const token = jwt.sign({
                     id: user.id,
                     email: user.email,
                 }, process.env.JWT_KEY, {
                     expiresIn: "1h"
                 })
-                res.status(200).json({ token });
+
+                // Création de la ville de départ
+                Kindom.create({
+                    name: "Ville de " + req.body.username,
+                    userId: user.id,
+                })
+                .then(async kingdom => {
+                    res.status(200).json({ token });
+                })
+                .catch(err => {
+                    res.status(500).json({ 'error': err });
+                });
             })
             .catch(err => {
                 res.status(500).json({ 'error': err });

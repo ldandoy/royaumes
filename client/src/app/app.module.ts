@@ -20,6 +20,8 @@ import { CaserneComponent } from './components/caserne/caserne.component';
 import { PortComponent } from './components/port/port.component';
 import { TempleComponent } from './components/temple/temple.component';
 import { WorldComponent } from './components/world/world.component';
+import { EmpireShowComponent } from './components/empire-show/empire-show.component';
+import { EmpireAttaqueComponent } from './components/empire-attaque/empire-attaque.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { WorldComponent } from './components/world/world.component';
     PortComponent,
     TempleComponent,
     WorldComponent,
+    EmpireShowComponent,
+    EmpireAttaqueComponent,
   ],
   imports: [
     BrowserModule,

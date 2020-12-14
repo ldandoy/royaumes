@@ -3,9 +3,23 @@
       <div class="col-12">
         <div class="box-world">
           <h1 class="title">Le monde</h1>
-          <div class="kingdom" *ngFor="let user of users">
-            <a routerLink="/empire">{{user.username}}</a>
-          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Niveau</th>
+                <th width="15%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td *ngIf="user.id == me.id"><a routerLink="/empire">Vous</a></td>
+                <td *ngIf="user.id != me.id">{{user.username}}</td>
+                <td>{{user.level}}</td>
+                <td><a class="btn btn-sm btn-info mr-2" routerLink="/{{user.id}}/empire-show">Voir</a> <a class="btn btn-sm btn-danger" routerLink="/{{user.id}}/empire-attaque">Attaquer</a></td>
+              </tr>  
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
