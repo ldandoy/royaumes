@@ -23,7 +23,7 @@ export class WorldComponent implements OnInit {
         users => {
           this.users = users;
         },
-        err => console.error(err)
+        error => console.error(error)
       );
 
     this.me = this.authService.me();

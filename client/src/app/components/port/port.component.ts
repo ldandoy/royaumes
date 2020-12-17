@@ -48,7 +48,7 @@ export class PortComponent implements OnInit {
         kingdom => {
           this.kingdom = kingdom;
         },
-        err => console.error(err)
+        error => console.error(error)
       );
   }
 

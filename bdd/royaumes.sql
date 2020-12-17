@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 14, 2020 at 03:27 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.1
+-- Hôte : localhost
+-- Généré le : jeu. 17 déc. 2020 à 12:24
+-- Version du serveur :  5.7.29-log
+-- Version de PHP : 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `royaumes`
+-- Base de données : `royaumes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barracks`
+-- Structure de la table `barracks`
 --
 
 CREATE TABLE `barracks` (
@@ -38,18 +38,18 @@ CREATE TABLE `barracks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `barracks`
+-- Déchargement des données de la table `barracks`
 --
 
 INSERT INTO `barracks` (`id`, `unitId`, `kingdomId`, `nb`, `createdAt`, `updatedAt`) VALUES
-(1, 1, 1, 15, '2020-12-12 14:15:22', '2020-12-12 14:15:22'),
-(2, 3, 2, 2, '2020-12-12 14:15:22', '2020-12-12 14:15:22'),
-(3, 2, 1, 28, '2020-12-13 21:18:36', '2020-12-13 21:18:36');
+(1, 1, 1, 15, '2020-12-12 14:15:22', '2020-12-16 17:32:23'),
+(2, 3, 2, 0, '2020-12-12 14:15:22', '2020-12-16 17:32:23'),
+(3, 2, 1, 0, '2020-12-13 21:18:36', '2020-12-16 17:32:23');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kingdoms`
+-- Structure de la table `kingdoms`
 --
 
 CREATE TABLE `kingdoms` (
@@ -61,7 +61,7 @@ CREATE TABLE `kingdoms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `kingdoms`
+-- Déchargement des données de la table `kingdoms`
 --
 
 INSERT INTO `kingdoms` (`id`, `name`, `userId`, `createdAt`, `updatedAt`) VALUES
@@ -71,33 +71,62 @@ INSERT INTO `kingdoms` (`id`, `name`, `userId`, `createdAt`, `updatedAt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `units`
+-- Structure de la table `ressources`
+--
+
+CREATE TABLE `ressources` (
+  `id` int(11) NOT NULL,
+  `wood` int(11) NOT NULL,
+  `or` int(11) NOT NULL,
+  `stone` int(11) NOT NULL,
+  `pop` int(11) NOT NULL,
+  `kingdomId` int(11) NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `ressources`
+--
+
+INSERT INTO `ressources` (`id`, `wood`, `or`, `stone`, `pop`, `kingdomId`, `createdAt`, `updatedAt`) VALUES
+(1, 40, 100, 20, 120, 1, '2020-12-16 19:12:23', '2020-12-16 18:12:50'),
+(2, 500, 3000, 2000, 30, 2, '2020-12-16 19:12:23', '2020-12-16 18:12:50');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `units`
 --
 
 CREATE TABLE `units` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `att` int(11) NOT NULL,
+  `off` int(11) NOT NULL,
   `def` int(11) NOT NULL,
   `booty` int(11) NOT NULL,
   `speed` int(11) NOT NULL,
+  `wood` int(11) NOT NULL,
+  `or` int(11) NOT NULL,
+  `pop` int(11) NOT NULL,
+  `stone` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `units`
+-- Déchargement des données de la table `units`
 --
 
-INSERT INTO `units` (`id`, `name`, `att`, `def`, `booty`, `speed`, `createdAt`, `updatedAt`) VALUES
-(1, 'Combatants à l\'épee', 5, 10, 20, 5, '2020-12-12 14:00:15', '2020-12-12 14:00:15'),
-(2, 'Frondeurs', 12, 7, 30, 9, '2020-12-12 14:00:15', '2020-12-12 14:00:15'),
-(3, 'Chars', 15, 20, 40, 10, '2020-12-12 14:00:52', '2020-12-12 14:00:52');
+INSERT INTO `units` (`id`, `name`, `off`, `def`, `booty`, `speed`, `wood`, `or`, `pop`, `stone`, `createdAt`, `updatedAt`) VALUES
+(1, 'Combatants à l\'épee', 5, 10, 20, 5, 0, 0, 0, 0, '2020-12-12 14:00:15', '2020-12-12 14:00:15'),
+(2, 'Frondeurs', 12, 7, 30, 9, 0, 0, 0, 0, '2020-12-12 14:00:15', '2020-12-12 14:00:15'),
+(3, 'Chars', 15, 20, 40, 10, 0, 0, 0, 0, '2020-12-12 14:00:52', '2020-12-12 14:00:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -111,7 +140,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `username`, `level`, `createdAt`, `updatedAt`) VALUES
@@ -119,11 +148,11 @@ INSERT INTO `users` (`id`, `email`, `password`, `username`, `level`, `createdAt`
 (3, 'a@a.com', '$2b$10$5gt7ixXtw3vxfWJ852TBiOT3sD2.CQcJyUOuQQ2gZ/BVe9keC9N9W', 'a', 1, '2020-12-12 13:11:35', '2020-12-12 13:11:35');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `barracks`
+-- Index pour la table `barracks`
 --
 ALTER TABLE `barracks`
   ADD PRIMARY KEY (`id`),
@@ -131,68 +160,87 @@ ALTER TABLE `barracks`
   ADD KEY `barracks_ibfk_2` (`unitId`);
 
 --
--- Indexes for table `kingdoms`
+-- Index pour la table `kingdoms`
 --
 ALTER TABLE `kingdoms`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`userId`);
 
 --
--- Indexes for table `units`
+-- Index pour la table `ressources`
+--
+ALTER TABLE `ressources`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kingdomId` (`kingdomId`);
+
+--
+-- Index pour la table `units`
 --
 ALTER TABLE `units`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `barracks`
+-- AUTO_INCREMENT pour la table `barracks`
 --
 ALTER TABLE `barracks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `kingdoms`
+-- AUTO_INCREMENT pour la table `kingdoms`
 --
 ALTER TABLE `kingdoms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `units`
+-- AUTO_INCREMENT pour la table `ressources`
+--
+ALTER TABLE `ressources`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `units`
 --
 ALTER TABLE `units`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `barracks`
+-- Contraintes pour la table `barracks`
 --
 ALTER TABLE `barracks`
   ADD CONSTRAINT `barracks_ibfk_1` FOREIGN KEY (`kingdomId`) REFERENCES `kingdoms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `barracks_ibfk_2` FOREIGN KEY (`unitId`) REFERENCES `units` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kingdoms`
+-- Contraintes pour la table `kingdoms`
 --
 ALTER TABLE `kingdoms`
   ADD CONSTRAINT `kingdoms_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `ressources`
+--
+ALTER TABLE `ressources`
+  ADD CONSTRAINT `ressources_ibfk_1` FOREIGN KEY (`kingdomId`) REFERENCES `kingdoms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

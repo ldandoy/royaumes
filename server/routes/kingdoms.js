@@ -3,7 +3,7 @@ const Kingdom = require('../models/Kingdom');
 
 const Router = express.Router();
 
-Router.get("/:userId/:kingdomId", (req, res) => {
+Router.get("/:userId/:kingdomId", (req, res, next) => {
     const userId = req.params.userId;
     const kingdomId = req.params.kingdomId;
     
@@ -16,8 +16,8 @@ Router.get("/:userId/:kingdomId", (req, res) => {
         .then(async  kingdom => {
             res.status(200).json(kingdom);
         })
-        .catch(err => {
-            res.status(500).json({'error': err});
+        .catch(error => {
+            next(error)
         });
 });
 
@@ -32,8 +32,8 @@ Router.get("/:userId", (req, res) => {
         .then(async  kingdoms => {
             res.status(200).json(kingdoms);
         })
-        .catch(err => {
-            res.status(500).json({'error': err});
+        .catch(error => {
+            next(error)
         });
 });
 

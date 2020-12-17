@@ -22,7 +22,7 @@ export class EmpireComponent implements OnInit {
         kingdoms => {
           this.kingdoms = kingdoms;
         },
-        err => console.error(err)
+        error => console.error(error)
       );
   }
 

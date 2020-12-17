@@ -6,7 +6,7 @@ const Unit = db.define('units', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    att: {
+    off: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -18,7 +18,19 @@ const Unit = db.define('units', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    speed: {
+    wood: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    stone: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    or: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    pop: {
         type: Sequelize.INTEGER,
         allowNull: false
     }

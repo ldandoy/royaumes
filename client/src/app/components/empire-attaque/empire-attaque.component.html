@@ -2,9 +2,95 @@
     <div class="row">
       <div class="col-12">
         <div class="box-empire-attaque">
-          <h1 class="title">Attaque</h1>
+          <h1 class="title">Vous attaquez {{ user.username }}</h1>
+          <table class="table mt-4" *ngIf="result == ''">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Nombre</th>
+                <th>Att</th>
+                <th>Def</th>
+                <th>Butin</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr *ngFor="let unit of units | keyvalue">
+              <td width="60%">{{unit.value.name}}</td>
+              <td class="text-center" (click)="selectAll(unit.key)" >{{unit.value.nb}}</td>
+              <td class="text-center">{{unit.value.off}}</td>
+              <td class="text-center">{{unit.value.def}}</td>
+              <td class="text-center">{{unit.value.booty}}</td>
+              <td class="text-center"><button class="addLink btn" (click)="addOff(unit.key)">+</button> <input *ngIf="unitsOff[unit.key]" type="number" class="recruInput" [(ngModel)]="unitsOff[unit.key].nb" /> <button class="addLink btn" (click)="delOff(unit.key)">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7" class="text-center"><button (click)="attaque()" class="btn btn-sm btn-danger">Attaquer</button></td>
+            </tr>
+          </table>
+
+          <div class="text-center" *ngIf="result != ''">
+            <h2 class="{{ result }}"><span *ngIf="result == 'win'">Vous avez gagnez !</span><span *ngIf="result == 'loose'">Vous avez perdu !</span></h2>
+
+            <h3>Attaquant</h3>
+            <table class="table mt-4">
+              <tr>
+                <td>Unités</td>
+                <td *ngFor="let unit of units | keyvalue">
+                  {{unit.value.name}}
+                </td>
+              </tr>
+              <tr>
+                <td>Attaquantes</td>
+                <td *ngFor="let unit of unitSurvey | keyvalue">
+                  {{unit.value.nb}}
+                </td>
+              </tr>
+              <tr>
+                <td>Perdues</td>
+                <td *ngFor="let unit of unitSurvey | keyvalue">
+                  {{unit.value.dead}}
+                </td>
+              </tr>
+              <tr>
+                <td>Restantes</td>
+                <td *ngFor="let unit of unitSurvey | keyvalue">
+                  {{unit.value.survey}}
+                </td>
+              </tr>
+            </table>
+
+            <h3>Défenseurs</h3>
+            <table class="table mt-4">
+              <tr>
+                <td>Unités</td>
+                <td *ngFor="let unit of units | keyvalue">
+                  {{unit.value.name}}
+                </td>
+              </tr>
+              <tr>
+                <td>Défenseuses</td>
+                <td *ngFor="let unit of unitkilled | keyvalue">
+                  {{unit.value.nb}}
+                </td>
+              </tr>
+              <tr>
+                <td>Perdues</td>
+                <td *ngFor="let unit of unitkilled | keyvalue">
+                  {{unit.value.dead}}
+                </td>
+              </tr>
+              <tr>
+                <td>Restantes</td>
+                <td *ngFor="let unit of unitkilled | keyvalue">
+                  {{unit.value.survey}}
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="text-right">
+            <a routerLink="/world" class="btn btn-dark">Retour au monde</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  

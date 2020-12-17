@@ -11,7 +11,7 @@ import { EmpireComponent } from './components/empire/empire.component';
 import { EmpireShowComponent } from './components/empire-show/empire-show.component';
 import { EmpireAttaqueComponent } from './components/empire-attaque/empire-attaque.component';
 import { KingdomDetailComponent } from './components/kingdom-detail/kingdom-detail.component';
-import { CaserneComponent } from './components/caserne/caserne.component';
+import { BarrackComponent } from './components/barrack/barrack.component';
 import { PortComponent } from './components/port/port.component';
 import { TempleComponent } from './components/temple/temple.component';
 
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: ':userId/empire-show', component: EmpireShowComponent, canActivate: [AuthGuard] },
   { path: ':userId/empire-attaque', component: EmpireAttaqueComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/kingdom-detail', component: KingdomDetailComponent, canActivate: [AuthGuard] },
-  { path: ':kingdomId/caserne', component: CaserneComponent, canActivate: [AuthGuard] },
+  { path: ':kingdomId/barrack', component: BarrackComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/port', component: PortComponent, canActivate: [AuthGuard] },
   { path: ':kingdomId/temple', component: TempleComponent, canActivate: [AuthGuard] },
 ];

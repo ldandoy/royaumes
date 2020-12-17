@@ -17,3 +17,8 @@ Barrack.belongsTo(Unit, {
     as: 'unit',
     foreignKey: 'unitId'
 })
+
+Unit.hasMany(Barrack, {
+    as: 'barracks',
+    foreignKey: 'unitId'
+})

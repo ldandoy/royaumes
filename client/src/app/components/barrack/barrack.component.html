@@ -1,0 +1,42 @@
+<div class="container-fluid caserne">
+  <div class="row">
+    <div class="col-12">
+      <div class="box-caserne">
+        <div class="">
+          <span>Bois: {{ressource.wood}}</span>&nbsp;<span>Or: {{ressource.or}}</span>&nbsp;<span>Pierre: {{ressource.stone}}</span>&nbsp;<span>Pop: {{ressource.pop}}</span>
+        </div>
+        <h1 class="title">La caserne</h1>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Nom</td>
+              <td class="text-center">Nombre</td>
+              <td class="text-center">Att</td>
+              <td class="text-center">Def</td>
+              <td class="text-center">Butin</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tr *ngFor="let unit of units | keyvalue">
+            <td width="60%">{{unit.value.name}}</td>
+            <td class="text-center">{{unit.value.barracks[0] ? unit.value.barracks[0].nb : 0}}</td>
+            <td class="text-center">{{unit.value.off}}</td>
+            <td class="text-center">{{unit.value.def}}</td>
+            <td class="text-center">{{unit.value.booty}}</td>
+            <td class="text-center"><button class="addLink btn" (click)="addRecru(unit.key)">+</button> <input type="number" class="recruInput" [(ngModel)]="unit.value.barracks[0].recru" /> <button class="addLink btn" (click)="delRecru(unit.key)">-</button></td>
+          </tr>
+          <tr>
+            <td colspan="6" class="text-right">
+              <button class="btn btn-sm btn-warning" (click)="doRecru()">Recrutter</button>
+            </td>
+          </tr>
+        </table>
+
+        <div class="text-right">
+          <a routerLink="/{{kingdomId}}/kingdom-detail" class="btn btn-dark">Retour à votre ville</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

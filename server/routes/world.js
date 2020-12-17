@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 const Router = express.Router();
 
-Router.get("/", (req, res) => {
+Router.get("/", (req, res, next) => {
     User.findAll({
         attributes: ['id', 'email', 'username', 'level', 'createdAt', 'updatedAt']
     })
@@ -11,7 +11,7 @@ Router.get("/", (req, res) => {
             res.status(200).json(users);
         })
         .catch(err => {
-            res.status(500).json({'error': err});
+            next(error)
         });
 });
 

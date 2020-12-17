@@ -16,12 +16,13 @@ import { TokenInterceptorService } from './services/token-interceptor/token-inte
 import { AuthGuard } from './guard/auth.guard';
 import { EmpireComponent } from './components/empire/empire.component';
 import { KingdomDetailComponent } from './components/kingdom-detail/kingdom-detail.component';
-import { CaserneComponent } from './components/caserne/caserne.component';
+import { BarrackComponent } from './components/barrack/barrack.component';
 import { PortComponent } from './components/port/port.component';
 import { TempleComponent } from './components/temple/temple.component';
 import { WorldComponent } from './components/world/world.component';
 import { EmpireShowComponent } from './components/empire-show/empire-show.component';
 import { EmpireAttaqueComponent } from './components/empire-attaque/empire-attaque.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,13 @@ import { EmpireAttaqueComponent } from './components/empire-attaque/empire-attaq
     RegisterComponent,
     EmpireComponent,
     KingdomDetailComponent,
-    CaserneComponent,
+    BarrackComponent,
     PortComponent,
     TempleComponent,
     WorldComponent,
     EmpireShowComponent,
     EmpireAttaqueComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

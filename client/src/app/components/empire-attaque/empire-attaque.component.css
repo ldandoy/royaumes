@@ -1,17 +1,39 @@
 .empire-attaque {
-background-image: url('/assets/img/bg_empire_attaque.jpg');
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-min-width: 100%;
-min-height: 100%;
+  background-image: url('/assets/img/bg_empire_attaque.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .box-empire-attaque {
-color: #fff;
-width: 80%;
-margin: 5% auto;
-padding: 40px 20px;
-background-color: rgba(0, 0, 0, 0.60);
-border-radius: 10px;
+  color: #fff;
+  width: 80%;
+  margin: 5% auto;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+}
+
+.box-empire-attaque td, .box-empire-attaque th {
+  color: #fff;
+}
+
+.box-empire-attaque td .addLink {
+  cursor: pointer;
+  color: #fff;
+}
+
+.box-empire-attaque td .recruInput {
+  width: 20%;
+  text-align: center;
+}
+
+.win {
+  color: #1fc2bc;
+}
+
+.loose {
+  color: #c81b1b;
 }

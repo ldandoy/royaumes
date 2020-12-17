@@ -14,6 +14,8 @@ const worldRouter       = require('./routes/world');
 const barracksRouter    = require('./routes/barracks');
 const unitsRouter       = require('./routes/units');
 const usersRouter       = require('./routes/users');
+const attaquesRouter    = require('./routes/attaques');
+const ressourcesRouter  = require('./routes/ressources');
 
 require('./models/Asso');
 
@@ -39,6 +41,8 @@ server.use('/world', worldRouter);
 server.use('/barracks', barracksRouter);
 server.use('/units', unitsRouter);
 server.use('/users', usersRouter);
+server.use('/attaques', attaquesRouter);
+server.use('/ressources', ressourcesRouter);
 
 server.use(errors.notFound);
 server.use(errors.errorHandler);

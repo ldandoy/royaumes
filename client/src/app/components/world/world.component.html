@@ -16,12 +16,11 @@
                 <td *ngIf="user.id == me.id"><a routerLink="/empire">Vous</a></td>
                 <td *ngIf="user.id != me.id">{{user.username}}</td>
                 <td>{{user.level}}</td>
-                <td><a class="btn btn-sm btn-info mr-2" routerLink="/{{user.id}}/empire-show">Voir</a> <a class="btn btn-sm btn-danger" routerLink="/{{user.id}}/empire-attaque">Attaquer</a></td>
-              </tr>  
+                <td><a class="btn btn-sm btn-info mr-2" routerLink="/{{user.id}}/empire-show">Voir</a> <a *ngIf="user.id != me.id" class="btn btn-sm btn-danger" routerLink="/{{user.id}}/empire-attaque">Attaquer</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-  

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.token);
           this.router.navigate(['/empire']);
         },
-        err => console.error(err)
+        error => console.error(error)
       );
   }
 
